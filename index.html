@@ -1,38 +1,48 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>WalkingDead</title>
+    <title>FirebaseSdkQuest</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-database.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="WalkingDead.js"></script>
 </head>
 
 <body>
 
-    <body>
+    <div style="text-align:center">
+        <h1>
+            Walking Dead Authentification !
+        </h1>
+    </div>
+
+    <div id="firebaseui-auth-container"></div>
+    <button onclick="logOut()">Sign Out</button>
+
+    <div id="showUser">
+        <h2>A list of The Walking Dead Characters: </h2>
 
         <div>
-            <ul id='liste_char'>
+            <ul id="character-list">
             </ul>
         </div>
 
         <div>
-            <p>Creer un nouveau perso : </p>
-            <form action="">
-                <input type="text" name='name' id="Name">
-                <br>
-                <button type="button" onclick="AddChar()">Envoyer</button>
-            </form>
+            <h3>Add a new character for Walking Dead :</h3>
+            <input type="text" name='name' id="Name">
+            <br>
+            <button type="button" onclick="PushOnFirebase()">Add New Char</button>
         </div>
-
-
-
-    </body>
-
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-database.js"></script>
-    <script src="WalkingDead.js"></script>
-
+    </div>
 </body>
 
 </html>
